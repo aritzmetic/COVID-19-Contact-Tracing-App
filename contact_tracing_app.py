@@ -2,21 +2,26 @@
 
 # Import tkinter
 import tkinter as tk
+from PIL import Image, ImageTk
 
 # Create a Class
-# use init method
-    # create frame
+class MainWindow:
+    # use init method
+    def __init__(self):
+        # create the main window
+        window = tk.Tk()
+        window.title('arix')
+        # size and position
+        window.geometry("800x600")
+        window.configure(background='white')
+        # create frame
+        self.frame = tk.Frame(self.window, bg='white')
+        self.frame.pack(fill='both', expand=True)
+        self.background_photo = None  
+        self.create_main_window()
 
 # create the main window
 def main_window():
-    # import global wildow
-    global window
-    # create the main window
-    window = tk.Tk()
-    window.title('arix')
-    # size and position
-    window.geometry("800x600")
-    window.configure(background='white')
     # background image
     background_image = tk.PhotoImage(file=r"C:\Users\acer\Downloads\Aritzmetic's COVID-19 CONTACT TRACING APP.png")
     background_label = tk.Label(window, image=background_image)
