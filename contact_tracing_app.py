@@ -23,9 +23,11 @@ class MainWindow:
 # create the main window
 def main_window():
     # background image
-    background_image = tk.PhotoImage(file=r"C:\Users\acer\Downloads\Aritzmetic's COVID-19 CONTACT TRACING APP.png")
-    background_label = tk.Label(window, image=background_image)
+    background_image = Image.open(r"C:/Users/acer/Downloads/Aritzmetic's COVID-19 CONTACT TRACING APP.png")
+    self.background_photo = ImageTk.PhotoImage(background_image)
+    background_label = tk.Label(self.frame, image=self.background_photo)
     background_label.place(x=0, y=0, relwidth=1, relheight=1)
+
     # Create buttons
     button_width = 30
     button_height = 3
@@ -38,14 +40,23 @@ def main_window():
 
     access_button = tk.Button(window, text='Access Entries', command=access_entries, bg='white', width=button_width, height=button_height, highlightthickness=0)
     access_button.place(relx=0.644, rely=0.638, anchor=tk.CENTER)
-    # Run the GUI main loop
 
-    window.mainloop()
+    # create instance and widgets to the buttons
+    self.add_entry_widget = AddEntry(self.frame)
+    self.search_entry_widget = SearchEntry(self.frame)
+    self.access_entries_widget = AccessEntries(self.frame)
 
-    # Call the function to create the main window
-main_window()
+    def open_add_entry(self):
+        self.add_entry_widget.show()
 
-# create instance and widgets to the buttons
+    def open_search_entry(self):
+        self.search_entry_widget.show()
+
+    def open_access_entries(self):
+        self.access_entries_widget.show()
+
+    def run(self):
+        self.window.mainloop()
 
 
 
