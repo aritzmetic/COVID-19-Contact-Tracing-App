@@ -5,6 +5,7 @@ from PIL import Image, ImageTk
 class AddEntry:
     # use init method to call the parent
     def __init__(self, parent):
+        # initialize the other objects
         self.parent = parent
         self.add_frame = None
 
@@ -20,9 +21,16 @@ class AddEntry:
         background_label.place(x=0, y=0, relwidth=1, relheight=1)
         background_label.image = background_image 
 
+        # Create name label and blank field
+        # Create age label and blank field
+        # Create phone number label and blank field
+        # Create location label and blank field
+        # Create questions 
+        # Create submit button
         # create back button
         back_button = tk.Button(self.add_frame, text='Back', command=self.go_back, bg='white', font=('Arial', 12))
         back_button.place(x=20, y=20)
+        # Create label for the notification
 
     # define show method
     def show(self):
