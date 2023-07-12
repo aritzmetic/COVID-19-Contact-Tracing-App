@@ -22,6 +22,11 @@ class AddEntry:
         background_label.image = background_image 
 
         # Create name label and blank field
+        name_label = tk.Label(self.add_frame, text='Name:', bg='light blue', font=('Georgia', 14))
+        name_label.place(x=600, y=160)
+        self.name_entry = tk.Entry(self.add_frame, font=('Times New Roman', 12))
+        self.name_entry.place(x=700, y=160)
+        
         # Create age label and blank field
         # Create phone number label and blank field
         # Create location label and blank field
