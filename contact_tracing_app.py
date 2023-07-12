@@ -25,30 +25,30 @@ class MainWindow:
         self.create_main_window()
 
 # create the main window
-def create_main_window(self):
-    # background image
-    background_image = Image.open(r"C:/Users/acer/Downloads/Aritzmetic's COVID-19 CONTACT TRACING APP.png")
-    self.background_photo = ImageTk.PhotoImage(background_image)
-    background_label = tk.Label(self.frame, image=self.background_photo)
-    background_label.place(x=0, y=0, relwidth=1, relheight=1)
+    def create_main_window(self):
+        # background image
+        background_image = Image.open(r"C:/Users/acer/Downloads/Aritzmetic's COVID-19 CONTACT TRACING APP.png")
+        self.background_photo = ImageTk.PhotoImage(background_image)
+        background_label = tk.Label(self.frame, image=self.background_photo)
+        background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
-    # Create buttons
-    button_width = 30
-    button_height = 3
+        # Create buttons
+        button_width = 30
+        button_height = 3
 
-    add_button = tk.Button(self.frame, text='Add Entry', command=self.open_add_entry, bg='white', width=button_width, height=button_height, highlightthickness=0)
-    add_button.place(relx=0.134, rely=0.638, anchor=tk.CENTER)
+        add_button = tk.Button(self.frame, text='Add Entry', command=self.open_add_entry, bg='white', width=button_width, height=button_height, highlightthickness=0)
+        add_button.place(relx=0.134, rely=0.638, anchor=tk.CENTER)
 
-    search_button = tk.Button(self.frame, text='Search Entry', command=self.open_search_entry, bg='white', width=button_width, height=button_height, highlightthickness=0)
-    search_button.place(relx=0.394, rely=0.638, anchor=tk.CENTER)
+        search_button = tk.Button(self.frame, text='Search Entry', command=self.open_search_entry, bg='white', width=button_width, height=button_height, highlightthickness=0)
+        search_button.place(relx=0.394, rely=0.638, anchor=tk.CENTER)
 
-    access_button = tk.Button(self.frame, text='Access Entries', command=self.open_access_entries, bg='white', width=button_width, height=button_height, highlightthickness=0)
-    access_button.place(relx=0.644, rely=0.638, anchor=tk.CENTER)
+        access_button = tk.Button(self.frame, text='Access Entries', command=self.open_access_entries, bg='white', width=button_width, height=button_height, highlightthickness=0)
+        access_button.place(relx=0.644, rely=0.638, anchor=tk.CENTER)
 
     # create instance and widgets to the buttons
-    self.add_entry_widget = AddEntry(self.frame)
-    self.search_entry_widget = SearchEntry(self.frame)
-    self.access_entries_widget = AccessEntries(self.frame)
+        self.add_entry_widget = AddEntry(self.frame)
+        self.search_entry_widget = SearchEntry(self.frame)
+        self.access_entries_widget = AccessEntries(self.frame)
 
     def open_add_entry(self):
         self.add_entry_widget.show()
@@ -61,7 +61,3 @@ def create_main_window(self):
 
     def run(self):
         self.window.mainloop()
-
-app = MainWindow()
-app.run()
-
