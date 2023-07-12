@@ -1,5 +1,6 @@
 import tkinter as tk
 from PIL import Image, ImageTk
+# import CVS
 
 # create a class
 class AddEntry:
@@ -82,6 +83,14 @@ class AddEntry:
         back_button = tk.Button(self.add_frame, text='Back', command=self.go_back, bg='yellow', font=('new times roman', 12))
         back_button.place(x=20, y=20)
         # Create label for the notification
+
+        # define submit data
+        # retrieve the entered data
+        # save using CVS
+        # contact tracing notification and condition
+        # Display window 1 if not a close contact
+        # Display window 2 if a close contact
+
 
     # define show method
     def show(self):
