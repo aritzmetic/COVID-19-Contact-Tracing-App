@@ -1,3 +1,3 @@
 # create access entry
-def access_entries():
+def AccessEntries():
     pass

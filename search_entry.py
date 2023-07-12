@@ -1,3 +1,3 @@
 # create search entry
-def search_entry():
+def SearchEntry():
     pass

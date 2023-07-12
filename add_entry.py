@@ -1,3 +1,3 @@
 # create add entry
-def add_entry():
+def AddEntry():
     pass
