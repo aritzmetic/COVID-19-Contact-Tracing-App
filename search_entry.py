@@ -24,15 +24,45 @@ class SearchEntry:
         back_button.place(x=20, y=20)
 
         # Create search entry label and blank field
+        search_label = tk.Label(self.search_frame, text='Enter your Registered Name:', bg='light blue', font=('Georgia', 14))
+        search_label.place(x=500, y=160)
+        search_entry = tk.Entry(self.search_frame, font=('Times New Roman', 12))
+        search_entry.place(x=800, y=160)
+
         # Create search button
+        search_button = tk.Button(self.search_frame, text='Search', command=lambda: self.search_data(search_entry.get()), bg='yellow', font=('Arial Narrow', 12))
+        search_button.place(x=700, y=210)
 
     # define search data
+    def search_data(self, entry_id):
         # let entry found be false by searching
+        entry_found = False
         # Read the CSV file and search for the entry
-            # set entry found to true and row 0-6 asccordingly
-                # if no, not a close contact
-                # else, close contact
+        with open('entries.csv', 'r') as file:
+            reader = csv.reader(file)
+            for row in reader:
+                if len(row) > 0 and row[0] == entry_id:
+                # set entry found to true and row 0-6 asccordingly
+                    entry_found = True
+                    name = row[0]
+                    age = row[1]
+                    phone = row[2]
+                    location = row[3]
+                    question1_answer = row[4]
+                    question2_answer = row[5]
+                    question3_answer = row[6]
+                    # if no, not a close contact
+                    if question1_answer == 'No' and question2_answer == 'No' and question3_answer == 'No':
+                        result = f"Name: {name}\nAge: {age}\nPhone Number: {phone}\nLocation: {location}\nThis person is not a close contact."
+                    # else, close contact
+                    else:
+                        result = f"Name: {name}\nAge: {age}\nPhone Number: {phone}\nLocation: {location}\nThis person is a close contact."
+
         # if not, print entry not found
+        if not entry_found:
+            result = "Entry not found."
+
+        self.display_result(result)
 
     # define result display
     # create OK button
@@ -51,3 +81,8 @@ class SearchEntry:
     def go_back(self):
         self.hide()
         self.parent.lift()
+
+root = tk.Tk()
+app = SearchEntry(root)
+app.show()
+root.mainloop()
