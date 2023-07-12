@@ -23,6 +23,21 @@ class SearchEntry:
         back_button = tk.Button(self.search_frame, text='Back', command=self.go_back, bg='white', font=('Arial', 12))
         back_button.place(x=20, y=20)
 
+        # Create search entry label and blank field
+        # Create search button
+
+    # define search data
+        # let entry found be false by searching
+        # Read the CSV file and search for the entry
+            # set entry found to true and row 0-6 asccordingly
+                # if no, not a close contact
+                # else, close contact
+        # if not, print entry not found
+
+    # define result display
+    # create OK button
+
+
     # define show method
     def show(self):
         self.create_search_window()
