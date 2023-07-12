@@ -1,6 +1,6 @@
 import tkinter as tk
 from PIL import Image, ImageTk
-# import CVS
+import csv
 
 # create a class
 class AddEntry:
@@ -16,6 +16,7 @@ class AddEntry:
         self.question1_choice = tk.StringVar()
         self.question2_choice = tk.StringVar()
         self.question3_choice = tk.StringVar()
+        self.notification_label = None
 
 # create add window method
     def create_add_window(self):
@@ -79,14 +80,32 @@ class AddEntry:
         question3_radio_no.place(x=950, y=470)
 
         # Create submit button
+        submit_button = tk.Button(self.add_frame, text='Submit', command=self.submit_data, bg='yellow', font=('pridi', 12))
+        submit_button.place(x=700, y=540)
+
         # create back button
         back_button = tk.Button(self.add_frame, text='Back', command=self.go_back, bg='yellow', font=('new times roman', 12))
         back_button.place(x=20, y=20)
+
         # Create label for the notification
+        self.notification_label = tk.Label(self.add_frame, text='', bg='white', font=('Arial', 14))
+        self.notification_label.place(x=20, y=440)
 
         # define submit data
+    def submit_data(self):
         # retrieve the entered data
+        name = self.name_entry.get()
+        age = self.age_entry.get()
+        phone = self.phone_entry.get()
+        location = self.location_entry.get()
+        question1_answer = self.question1_choice.get()
+        question2_answer = self.question2_choice.get()
+        question3_answer = self.question3_choice.get()
+            
         # save using CVS
+        with open('entries.csv', 'a', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow([name, age, phone, location, question1_answer, question2_answer, question3_answer])
         # contact tracing notification and condition
         # Display window 1 if not a close contact
         # Display window 2 if a close contact
