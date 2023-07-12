@@ -14,7 +14,17 @@ class AddEntry:
         back_button = tk.Button(self.add_frame, text='Back', command=self.go_back, bg='white')
         back_button.pack()
 
-# define show method
-# define hide method
-# defien go back method
+    # define show method
+    def show(self):
+        self.create_add_window()
+        self.add_frame.lift()
+
+    # define hide method
+    def hide(self):
+        self.add_frame.destroy()
+
+    # define go back method
+    def go_back(self):
+        self.hide()
+        self.parent.lift()
 

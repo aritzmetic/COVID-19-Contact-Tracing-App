@@ -12,7 +12,18 @@ class AccessEntries:
         # create back button
         back_button = tk.Button(self.access_frame, text='Back', command=self.go_back, bg='white')
         back_button.pack()
-# define show method
-# define hide method
-# define go back method
+
+    # define show method
+    def show(self):
+        self.create_access_window()
+        self.access_frame.lift()
+
+    # define hide method
+    def hide(self):
+        self.access_frame.destroy()
+
+    # define go back method
+    def go_back(self):
+        self.hide()
+        self.parent.lift()
 

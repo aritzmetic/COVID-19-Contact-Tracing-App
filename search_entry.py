@@ -13,7 +13,17 @@ class SearchEntry:
         # create back button
         back_button = tk.Button(self.search_frame, text='Back', command=self.go_back, bg='white')
         back_button.pack()
-        
-# define show method
-# define hide method
-# define go back method
+
+    # define show method
+    def show(self):
+        self.create_search_window()
+        self.search_frame.lift()
+
+    # define hide method
+    def hide(self):
+        self.search_frame.destroy()
+
+    # define go back method
+    def go_back(self):
+        self.hide()
+        self.parent.lift()
