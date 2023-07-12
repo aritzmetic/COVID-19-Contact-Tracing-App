@@ -3,15 +3,9 @@
 # Import tkinter
 import tkinter as tk
 
-# create add entry
-def add_entry():
-    pass
-# create search entry
-def search_entry():
-    pass
-# create access entry
-def access_entries():
-    pass
+# Create a Class
+# use init method
+    # create frame
 
 # create the main window
 def main_window():
@@ -45,6 +39,8 @@ def main_window():
 
     # Call the function to create the main window
 main_window()
+
+# create instance and widgets to the buttons
 
 
 
