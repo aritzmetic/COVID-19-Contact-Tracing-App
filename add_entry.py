@@ -1,6 +1,7 @@
 import tkinter as tk
 from PIL import Image, ImageTk
 import csv
+from closecontactwindow import CloseContactWindow
 
 # create a class
 class AddEntry:
