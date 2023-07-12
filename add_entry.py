@@ -108,8 +108,14 @@ class AddEntry:
             writer = csv.writer(file)
             writer.writerow([name, age, phone, location, question1_answer, question2_answer, question3_answer])
         # contact tracing notification and condition
-        # Display window 1 if not a close contact
-        # Display window 2 if a close contact
+        if question1_answer == 'No' and question2_answer == 'No' and question3_answer == 'No':
+            # Display window 1 if not a close contact
+            window1 = CloseContactWindow(self.parent, "You are not a close contact person.", "C:\\Users\\acer\\Downloads\\nof01.png")
+            window1.show()
+        else:
+            # Display window 2 if a close contact
+            window2 = CloseContactWindow(self.parent, "You are a close contact person.", "C:\\Users\\acer\\Downloads\\nof2.png")
+            window2.show()
 
 
     # define show method
