@@ -8,6 +8,13 @@ class AddEntry:
         # initialize the other objects
         self.parent = parent
         self.add_frame = None
+        self.name_entry = None
+        self.age_entry = None
+        self.phone_entry = None
+        self.location_entry = None
+        self.question1_choice = tk.StringVar()
+        self.question2_choice = tk.StringVar()
+        self.question3_choice = tk.StringVar()
 
 # create add window method
     def create_add_window(self):
@@ -44,11 +51,35 @@ class AddEntry:
         location_label.place(x=570, y=310)
         self.location_entry = tk.Entry(self.add_frame, font=('Times New Roman', 12))
         self.location_entry.place(x=700, y=310)
-        
+
         # Create questions 
+        question_label = tk.Label(self.add_frame, text='Questions:', bg='light green', font=('Times New Roman', 14))
+        question_label.place(x=700, y=370)
+
+        question1 = tk.Label(self.add_frame, text='1. Are you experiencing any symptoms in the past 7 days', bg='light blue', font=('Times New Roman', 10))
+        question1.place(x=400, y=410)
+        question1_radio_yes = tk.Radiobutton(self.add_frame, text='Yes', variable=self.question1_choice, value='Yes', bg='cyan', font=('Arial', 8))
+        question1_radio_yes.place(x=900, y=410)
+        question1_radio_no = tk.Radiobutton(self.add_frame, text='No', variable=self.question1_choice, value='No', bg='cyan', font=('Arial', 8))
+        question1_radio_no.place(x=950, y=410)
+
+        question2 = tk.Label(self.add_frame, text='2. Have you been in contact with a COVID-19 positive person?', bg='light blue', font=('Times New Roman', 10))
+        question2.place(x=400, y=440)
+        question2_radio_yes = tk.Radiobutton(self.add_frame, text='Yes', variable=self.question2_choice, value='Yes', bg='cyan', font=('Arial', 8))
+        question2_radio_yes.place(x=900, y=440)
+        question2_radio_no = tk.Radiobutton(self.add_frame, text='No', variable=self.question2_choice, value='No', bg='cyan', font=('Arial', 8))
+        question2_radio_no.place(x=950, y=440)
+
+        question3 = tk.Label(self.add_frame, text='3. Have you been tested for Covid-19 in the last 14 days?', bg='light blue', font=('Times New Roman', 10))
+        question3.place(x=400, y=470)
+        question3_radio_yes = tk.Radiobutton(self.add_frame, text='Yes', variable=self.question3_choice, value='Yes', bg='cyan', font=('Arial', 8))
+        question3_radio_yes.place(x=900, y=470)
+        question3_radio_no = tk.Radiobutton(self.add_frame, text='No', variable=self.question3_choice, value='No', bg='cyan', font=('Arial', 8))
+        question3_radio_no.place(x=950, y=470)
+
         # Create submit button
         # create back button
-        back_button = tk.Button(self.add_frame, text='Back', command=self.go_back, bg='white', font=('Arial', 12))
+        back_button = tk.Button(self.add_frame, text='Back', command=self.go_back, bg='yellow', font=('new times roman', 12))
         back_button.place(x=20, y=20)
         # Create label for the notification
 
@@ -66,3 +97,7 @@ class AddEntry:
         self.hide()
         self.parent.lift()
 
+root = tk.Tk()
+app = AddEntry(root)
+app.show()
+root.mainloop()
