@@ -1,4 +1,4 @@
-import tkinter as tkinter
+import tkinter as tk
 # create a class
 class AddEntry:
     # use init method to call the parent
