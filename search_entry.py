@@ -1,5 +1,6 @@
 import tkinter as tk
 from PIL import Image, ImageTk
+import csv
 
 # create a class
 class SearchEntry:
@@ -20,7 +21,7 @@ class SearchEntry:
         background_label.image = background_image 
         
         # create back button
-        back_button = tk.Button(self.search_frame, text='Back', command=self.go_back, bg='white', font=('Arial', 12))
+        back_button = tk.Button(self.search_frame, text='Back', command=self.go_back, bg='yellow', font=('new times roman', 12))
         back_button.place(x=20, y=20)
 
         # Create search entry label and blank field
@@ -65,7 +66,26 @@ class SearchEntry:
         self.display_result(result)
 
     # define result display
-    # create OK button
+    def display_result(self, result):
+        # new window for result
+        result_window = tk.Toplevel(self.parent)
+        result_window.attributes("-fullscreen", True)
+        result_window.title("Search Result")
+
+        # Set background for the new window
+        image = Image.open('C:\\Users\\acer\\Downloads\\nof03.png')
+        background_image = ImageTk.PhotoImage(image)
+        background_label = tk.Label(result_window, image=background_image)
+        background_label.place(x=0, y=0, relwidth=1, relheight=1)
+        background_label.image = background_image
+
+        # Result Label
+        result_label = tk.Label(result_window, text=result, font=('Arial', 35))
+        result_label.place(x=400, y=350)
+
+        # create OK button
+        ok_button = tk.Button(result_window, text='OK', command=result_window.destroy, bg='yellow', font=('new times roman', 16))
+        ok_button.place(x=750, y=700)
 
 
     # define show method
