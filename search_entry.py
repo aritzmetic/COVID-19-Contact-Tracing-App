@@ -101,8 +101,3 @@ class SearchEntry:
     def go_back(self):
         self.hide()
         self.parent.lift()
-
-root = tk.Tk()
-app = SearchEntry(root)
-app.show()
-root.mainloop()

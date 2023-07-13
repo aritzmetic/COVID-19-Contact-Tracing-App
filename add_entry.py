@@ -131,8 +131,3 @@ class AddEntry:
     def go_back(self):
         self.hide()
         self.parent.lift()
-
-root = tk.Tk()
-app = AddEntry(root)
-app.show()
-root.mainloop()

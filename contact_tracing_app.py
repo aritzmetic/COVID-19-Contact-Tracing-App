@@ -13,7 +13,7 @@ class MainWindow:
     def __init__(self):
         # create the main window
         self.window = tk.Tk()
-        self.window.title('arix')
+        self.window.title("AritzMetic's COVID-19 Contact Tracing App")
         # size and position
         self.window.geometry("800x600")
         self.window.configure(background='white')

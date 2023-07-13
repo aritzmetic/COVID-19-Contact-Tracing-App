@@ -11,7 +11,7 @@ class AccessEntries:
         self.parent = parent
         self.access_frame = None
         self.password = "aritzmetic"
-        
+
     # create search window method
     def create_access_window(self):
         self.access_frame = tk.Frame(self.parent, bg='white')
@@ -111,8 +111,3 @@ class AccessEntries:
     def go_back(self):
         self.hide()
         self.parent.lift()
-
-root = tk.Tk()
-app = AccessEntries(root)
-app.show()
-root.mainloop()
