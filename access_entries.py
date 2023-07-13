@@ -21,7 +21,14 @@ class AccessEntries:
         background_label.image = background_image 
 
         # Create password label and blank field
+        password_label = tk.Label(self.access_frame, text='Enter password:', bg='light blue', font=('Georgia', 14))
+        password_label.place(x=550, y=200)
+        password_entry = tk.Entry(self.access_frame, show='*', font=('Arial', 12))
+        password_entry.place(x=800, y=200)
+
         # Create access button
+        access_button = tk.Button(self.access_frame, text='Access Entries', command=lambda: self.check_password(password_entry.get()), bg='magenta', font=('new times roman', 12))
+        access_button.place(x=700, y=250)
 
         # create back button
         back_button = tk.Button(self.access_frame, text='Back', command=self.go_back, bg='white', font=('Arial', 12))
@@ -50,3 +57,7 @@ class AccessEntries:
         self.hide()
         self.parent.lift()
 
+root = tk.Tk()
+app = AccessEntries(root)
+app.show()
+root.mainloop()
