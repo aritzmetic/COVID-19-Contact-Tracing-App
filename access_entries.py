@@ -5,6 +5,7 @@ from PIL import Image, ImageTk
 class AccessEntries:
     # use init method to call the parent
     def __init__(self, parent):
+        # initialize the other objects
         self.parent = parent
         self.access_frame = None
     # create search window method
@@ -19,9 +20,21 @@ class AccessEntries:
         background_label.place(x=0, y=0, relwidth=1, relheight=1)
         background_label.image = background_image 
 
+        # Create password label and blank field
+        # Create access button
+
         # create back button
         back_button = tk.Button(self.access_frame, text='Back', command=self.go_back, bg='white', font=('Arial', 12))
         back_button.place(x=20, y=20)
+    
+    # define check password
+        # if the password is correct, show entries
+        # if not, incorrect password
+    
+    # create new window for showing the entries
+
+    # Read the entries from the CSV file
+    # Display the entries
 
     # define show method
     def show(self):
