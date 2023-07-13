@@ -1,5 +1,7 @@
 import tkinter as tk
 from PIL import Image, ImageTk
+# import cvs
+# from tkinter import ttk
 
 # create a class
 class AccessEntries:
@@ -45,9 +47,20 @@ class AccessEntries:
             error_label.place(x=690, y=300)
     
     # create new window for showing the entries
+    def show_entries(self):
+        entries_window = tk.Toplevel(self.parent)
+        entries_window.title("All Entries")
 
-    # Read the entries from the CSV file
-    # Display the entries
+        # Create canvas
+        # Create scrollbar forr canvas
+        # Configure the canvas to work with the scrollbar
+        # Create a frame inside the canvas to hold the entries
+
+
+        # Read the entries from the CSV file
+        # Display the entries
+
+        # Configure the canvas scrolling region
 
     # define show method
     def show(self):
