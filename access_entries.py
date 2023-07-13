@@ -1,7 +1,7 @@
 import tkinter as tk
 from PIL import Image, ImageTk
-# import cvs
-# from tkinter import ttk
+import csv
+from tkinter import ttk
 
 # create a class
 class AccessEntries:
@@ -52,10 +52,20 @@ class AccessEntries:
         entries_window.title("All Entries")
 
         # Create canvas
-        # Create scrollbar forr canvas
-        # Configure the canvas to work with the scrollbar
-        # Create a frame inside the canvas to hold the entries
+        canvas = tk.Canvas(entries_window)
+        canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
+        # Create scrollbar forr canvas
+        scrollbar = tk.Scrollbar(entries_window, command=canvas.yview)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+
+        # Configure the canvas to work with the scrollbar
+        canvas.configure(yscrollcommand=scrollbar.set)
+        canvas.bind('<Configure>', lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
+
+        # Create a frame inside the canvas to hold the entries
+        entries_frame = tk.Frame(canvas, bg='white')
+        canvas.create_window((0, 0), window=entries_frame, anchor='nw')
 
         # Read the entries from the CSV file
         # Display the entries
