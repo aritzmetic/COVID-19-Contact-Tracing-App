@@ -35,8 +35,14 @@ class AccessEntries:
         back_button.place(x=20, y=20)
     
     # define check password
+    def check_password(self, entered_password):
         # if the password is correct, show entries
+        if entered_password == self.password:
+            self.show_entries()
         # if not, incorrect password
+        else:
+            error_label = tk.Label(self.access_frame, text='Incorrect password', bg='light blue', font=('Arial', 12), fg='red')
+            error_label.place(x=690, y=300)
     
     # create new window for showing the entries
 
