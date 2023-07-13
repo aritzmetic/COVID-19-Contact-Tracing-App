@@ -10,6 +10,8 @@ class AccessEntries:
         # initialize the other objects
         self.parent = parent
         self.access_frame = None
+        self.password = "aritzmetic"
+        
     # create search window method
     def create_access_window(self):
         self.access_frame = tk.Frame(self.parent, bg='white')
@@ -33,7 +35,7 @@ class AccessEntries:
         access_button.place(x=700, y=250)
 
         # create back button
-        back_button = tk.Button(self.access_frame, text='Back', command=self.go_back, bg='white', font=('Arial', 12))
+        back_button = tk.Button(self.access_frame, text='Back', command=self.go_back, bg='yellow', font=('new times roman', 16))
         back_button.place(x=20, y=20)
     
     # define check password
@@ -68,7 +70,31 @@ class AccessEntries:
         canvas.create_window((0, 0), window=entries_frame, anchor='nw')
 
         # Read the entries from the CSV file
+        entries = []
+        with open('entries.csv', 'r') as file:
+            reader = csv.reader(file)
+            for row in reader:
+                entries.append(row)
         # Display the entries
+        for i, entry in enumerate(entries):
+            name_label = tk.Label(entries_frame, text='Name: ' + entry[0], font=('Arial', 12), bg='white')
+            name_label.pack(pady=5, anchor='w')
+
+            age_label = tk.Label(entries_frame, text='Age: ' + entry[1], font=('Arial', 12), bg='white')
+            age_label.pack(anchor='w')
+
+            phone_label = tk.Label(entries_frame, text='Phone Number: ' + entry[2], font=('Arial', 12), bg='white')
+            phone_label.pack(anchor='w')
+
+            location_label = tk.Label(entries_frame, text='Location: ' + entry[3], font=('Arial', 12), bg='white')
+            location_label.pack(anchor='w')
+
+            status_label = tk.Label(entries_frame, text='PUI?: ' + entry[4], font=('Arial', 12), bg='white')
+            status_label.pack(anchor='w')
+
+            if i < len(entries) - 1:
+                separator = ttk.Separator(entries_frame, orient='horizontal')
+                separator.pack(fill='x', pady=5)
 
         # Configure the canvas scrolling region
 
