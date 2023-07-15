@@ -44,3 +44,9 @@ https://github.com/aritzmetic/COVID-19-Contact-Tracing-App/assets/112628197/8b00
 > > `Note: Place code and image files in the same directory.`
 
 
+https://github.com/aritzmetic/COVID-19-Contact-Tracing-App/assets/112628197/6e48e2a0-73e9-48d4-b805-0837b45d53f3
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+**_You are free to get in touch with me, @aritzmetic,  or to report problems directly on this repository if you discover problems with the project. Check out our [contribution guidelines](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors) if you are interested in doing more to help the development of the project. Thank you!_** 
+
